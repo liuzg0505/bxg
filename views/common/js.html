@@ -1,5 +1,16 @@
+<!--
 <script src="/public/assets/jquery/jquery.min.js"></script>
 <script src="/public/assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="/public/assets/nprogress/nprogress.js"></script>
 <script src="/public/assets/echarts/echarts.min.js"></script>
 <script src="/public/js/common.js"></script>
+-->
+
+<script src="/public/js/common/require.js"></script>
+<script src="/public/js/common/config.js"></script>
+
+<script>
+  //所有页面公共部分的功能都写到common里面
+  //加载define定义好的模块common
+  require(["js/common/common"]);
+</script>
