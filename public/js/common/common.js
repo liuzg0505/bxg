@@ -18,18 +18,12 @@ define(["jquery", "template", "NProgress" ,"jquery_cookie"], function ($, templa
   
     //jquery中ajax的全局事件
     $(document).ajaxStart(function () {
-      console.log("start");
       $(".mask").show();
     });
-    $(document).ajaxComplete(function () {
-      console.log("ajaxComplete");
-    });
     $(document).ajaxStop(function () {
-      console.log("stop");
       setTimeout(function () {
         $(".mask").hide();
       },500);
-    
     });
     
     //判断cookie中是否存在session ID， 存在就渲染这个页面侧边栏头像和用户名，否则就跳转到login页面
@@ -72,7 +66,8 @@ define(["jquery", "template", "NProgress" ,"jquery_cookie"], function ($, templa
     var pathname = location.pathname;
     var pathObj = {
       "/teacher/add": "/teacher/list",
-      "/settings": "/"
+      "/settings": "/",
+      "/repass" : "/"
     };
     pathname = pathObj[pathname] || pathname;
     
