@@ -71,6 +71,24 @@ a:focus {
 .aside .navs .arrow {
   float: right;
 }
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+  display: none;
+}
+.mask img {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .main {
   min-width: 844px;
   padding: 72px 0 30px 180px;

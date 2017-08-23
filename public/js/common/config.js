@@ -11,10 +11,17 @@ require.config({
     "jquery_cookie": "assets/jquery-cookie/jquery.cookie",
     "template": "assets/artTemplate/template-web",
     "bootstrap": "assets/bootstrap/js/bootstrap",
+    "tool": "js/common/tool",
+    "datepicker": "assets/bootstrap-datepicker/js/bootstrap-datepicker",
+    "datepicker_cn": "assets/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min",
+    "NProgress": "assets/nprogress/nprogress"
   },
   shim: {
     "bootstrap": {
       deps: ["jquery"]
+    },
+    "datepicker_cn": {
+      deps: ["jquery", "datepicker"]
     }
   }
   

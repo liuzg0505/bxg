@@ -22,7 +22,7 @@
         <li class="active">讲师列表</li>
       </ol>
       <div class="page-title">
-        <a href="./teacher_add.html" class="btn btn-success btn-sm pull-right">添加讲师</a>
+        <a href="/teacher/add" class="btn btn-success btn-sm pull-right">添加讲师</a>
       </div>
       <div class="panel panel-default">
         <div class="panel-body">
@@ -79,7 +79,7 @@
     <td>{{v.tc_join_date}}</td>
     <td>
       <a data-toggle="modal" class="btn btn-info btn-xs btn_view">查 看</a>
-      <a href="/teacher/add" class="btn btn-info btn-xs">编 辑</a>
+      <a href="/teacher/add?tc_id={{v.tc_id}}" class="btn btn-info btn-xs">编 辑</a>
       {{if v.tc_status==0}}
       <a href="javascript:;" class="btn btn-warning btn-xs btn_handle">注 销</a>
       {{else}}
@@ -141,7 +141,8 @@
           <tr>
             <td colspan="7">
               <div class="introduce">
-                {{tc_introduce}}
+                <!-- 加@识别标签 -->
+                {{@tc_introduce}}
               </div>
             </td>
           </tr>

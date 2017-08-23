@@ -5,10 +5,32 @@
 //定义common模块，设置3个依赖关系，其中，jquery有产出jQuery，用形参接收;
 // template 也有产出template方法，用形参接收
 
-define(["jquery", "template" ,"jquery_cookie"], function ($, template) {
+define(["jquery", "template", "NProgress" ,"jquery_cookie"], function ($, template, NProgress) {
   //所有页面公共部分的功能都写到common里面
   $(function () {
+  
+    //进度条插件
+    NProgress.start();
+    setTimeout(function () {
+      NProgress.done();
+    },500);
+  
+  
+    //jquery中ajax的全局事件
+    $(document).ajaxStart(function () {
+      console.log("start");
+      $(".mask").show();
+    });
+    $(document).ajaxComplete(function () {
+      console.log("ajaxComplete");
+    });
+    $(document).ajaxStop(function () {
+      console.log("stop");
+      setTimeout(function () {
+        $(".mask").hide();
+      },500);
     
+    });
     
     //判断cookie中是否存在session ID， 存在就渲染这个页面侧边栏头像和用户名，否则就跳转到login页面
     var PHPSESSID = $.cookie("PHPSESSID");
@@ -47,12 +69,18 @@ define(["jquery", "template" ,"jquery_cookie"], function ($, template) {
     
     //左侧导航栏高亮功能  排他
     var navs = $("#aside_nav a");
+    var pathname = location.pathname;
+    var pathObj = {
+      "/teacher/add": "/teacher/list",
+      "/settings": "/"
+    };
+    pathname = pathObj[pathname] || pathname;
     
     navs.each(function (i, e) {
       //排他
       $(e).removeClass("active");
       //高亮当前
-      if($(this).attr("href") == location.pathname) {
+      if($(this).attr("href") == pathname) {
         $(this).addClass("active");
       }
     });
@@ -73,7 +101,6 @@ define(["jquery", "template" ,"jquery_cookie"], function ($, template) {
     }
     
   });
-  
   
   
 });
