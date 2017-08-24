@@ -17,6 +17,7 @@ define(["jquery", "template", "NProgress" ,"jquery_cookie"], function ($, templa
   
   
     //jquery中ajax的全局事件
+    //遮罩层
     $(document).ajaxStart(function () {
       $(".mask").show();
     });
@@ -67,7 +68,8 @@ define(["jquery", "template", "NProgress" ,"jquery_cookie"], function ($, templa
     var pathObj = {
       "/teacher/add": "/teacher/list",
       "/settings": "/",
-      "/repass" : "/"
+      "/repass" : "/",
+      "/category/add": "/category/list"
     };
     pathname = pathObj[pathname] || pathname;
     
