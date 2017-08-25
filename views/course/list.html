@@ -55,10 +55,14 @@
     {{each result v i}}
     <div class="course">
       <div class="pic">
+        {{if v.cs_cover}}
         <img src="{{v.cs_cover}}" alt="">
+        {{else}}
+        <img src="/uploads/course.png" alt="">
+        {{/if}}
       </div>
       <div class="info">
-        <a href="javascript:;">{{v.cs_name}}</a>
+        <a href="/course/step1?cs_id={{v.cs_id}}">{{v.cs_name}}</a>
         <ul class="list-unstyled">
           <li>
             <span>讲师：{{v.tc_name}}</span>

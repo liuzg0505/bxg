@@ -8,7 +8,6 @@ define(["jquery", "template", "js/common/common"], function ($, template) {
       type: "get",
       url: "/api/course",
       success: function (info) {
-        console.log(info);
         var html = template("tpl_courselist", info);
         $(".course-list").html(html);
       }

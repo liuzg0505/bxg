@@ -69,7 +69,10 @@ define(["jquery", "template", "NProgress" ,"jquery_cookie"], function ($, templa
       "/teacher/add": "/teacher/list",
       "/settings": "/",
       "/repass" : "/",
-      "/category/add": "/category/list"
+      "/category/add": "/category/list",
+      "/course/step1": "/course/add",
+      "/course/step2": "/course/add",
+      "/course/step3": "/course/add",
     };
     pathname = pathObj[pathname] || pathname;
     
