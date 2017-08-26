@@ -17,7 +17,9 @@ require.config({
     NProgress: "assets/nprogress/nprogress",
     uploadify: "assets/uploadify/jquery.uploadify",
     region: "assets/jquery-region/jquery.region",
-    ckeditor: "assets/ckeditor/ckeditor"
+    ckeditor: "assets/ckeditor/ckeditor",
+    jquery_jcrop: "assets/Jcrop/js/Jcrop",
+    echarts: "assets/echarts/echarts.min"
   },
   shim: {
     bootstrap: {
@@ -31,6 +33,9 @@ require.config({
     },
     ckeditor: {
       exports: "CKEDITOR"
+    },
+    jquery_jcrop: {
+      deps: ["jquery"]
     }
   }
   

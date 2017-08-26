@@ -36,7 +36,7 @@ define(["jquery", "template", "tool","ckeditor", "uploadify", "jquery_cookie", "
               var path = data.result.path;
               
               //修改当前图片显示
-              $(".preview > img").attr("src", path);
+              $(".preview  img").attr("src", path);
               
               //修改当前页面侧边栏的头像
               $("#userinfo img").attr("src", path);

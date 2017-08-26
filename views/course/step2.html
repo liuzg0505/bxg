@@ -8,6 +8,10 @@
     .uploadify-button {
       padding: 0;
     }
+    .jcrop-thumb {
+      top: 0;
+      right: 0;
+    }
   </style>
 </head>
 <body>
@@ -81,7 +85,7 @@
       <div class="picture col-md-offset-2">
         <div class="preview">
           {{if cs_cover_original}}
-          <img src="{{cs_cover_original}}" alt="">
+          <img src="{{cs_cover_original}}" id="target" alt="">
           {{else}}
           <img src="/uploads/course.png" alt="">
           {{/if}}
@@ -93,7 +97,7 @@
           <a href="javascript:;" id="upfile">选择图片</a>
         </div>
         <div class="col-md-2">
-          <a href="javascript:;" class="btn btn-warning btn-sm" disabled>裁切图片</a>
+          <a href="javascript:;" class="btn btn-warning btn-sm btn_crop" {{if !cs_cover_original}} disabled {{/if}} >裁切图片</a>
         </div>
       </div>
     </div>
